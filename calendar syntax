@@ -1,3 +1,9 @@
 import calendar
 b=calendar.calendar(2026)
 print(b)
+
+a=calendar.month(2026,4)
+print(a)
+
+c=calendar.isleap(2024)
+print(c)
