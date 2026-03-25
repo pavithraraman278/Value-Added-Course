@@ -1,0 +1,35 @@
+import pandas as pd
+from twilio.rest import Client
+import time
+
+acc_SID=" "
+auth_token=" "
+
+client=Client(acc_SID,auth_token)
+import pandas as pd
+
+df = pd.read_excel(" ")
+print(df)
+
+for i in range(len(df)):
+    name=df.loc[i,"NAME"]
+    desig=df.loc[i,"DESIGNATION"]
+    number=df.loc[i,"NUMBER"]
+
+
+    messages={'Staff':"good morning",
+              'Student':"hi daa",
+              'Corpenter':"study well",
+              'Docter':"hiiiiii malini",
+              "Engineer": "vip",
+              'Manager':"hii madam"}
+    msg=messages.get(desig.lower(),"hello")
+    final_message=f"{name} {msg}"
+
+    client.messages.create(
+        from_="whatsapp:+",**************
+        body="hello xxxxxx",
+        to="watsapp:+91*********"
+    )
+    print("sent to message:",number)
+    time.sleep(1)
