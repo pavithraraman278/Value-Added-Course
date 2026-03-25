@@ -1,0 +1,18 @@
+function saveGmailAttachments() {
+   var folder=DriveApp.getFolderById("ur folder id");
+   var threads=GmailApp.search("has:attachments is:unread");
+
+   threads.forEach(function(thread){
+    var messages=thread.getMessages();
+
+    messages.forEach(function(messages) {
+      var attachments=messages.getAttachments();
+
+      attachments.forEach(function(file){
+        folder.createFile(file);
+      });
+
+      messages.markRead();
+    });
+   });
+}
